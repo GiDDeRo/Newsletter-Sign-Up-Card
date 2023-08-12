@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', 'Trebuchet MS', sans-serif;
+    background-color: hsl(235, 18%, 26%);
+    padding: 20px;
+}
+.card-1, .card-2 {
+    background-color: white;
+}
+.card-1 {
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 25px;
+
+    animation: cardOpen;
+    animation-duration: 1s;
+    transition: ease-in;
+
+}
+.container-text {
+    width: 50%;
+    display: grid;
+    justify-content: space-between;
+    margin: 40px 30px;
+}
+.container-text h2 {
+    font-size: 37px;
+}
+.container-text p {
+    font-size: 12.5px;
+    line-height: 20px;
+}
+.list {
+    display: grid;
+    justify-content: space-between;
+    height: 75px;
+}
+.list span {
+    display: flex;
+    align-items: center;
+}
+.list span img {
+    height: 17px; 
+    margin-right: 10px;
+}
+.mail-input {
+    width: 100%;
+}
+.mail-input span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 18px;
+    overflow: hidden;
+}
+.mail-input label {
+    font-weight: 700;
+    font-size: 10px;
+}
+#warning {
+    color: hsl(4, 100%, 67%);
+    font-weight: 700;
+    font-size: 10px;
+    position: relative;
+    top: 5px;
+    opacity: 0;
+    transition: .1s ease-in;
+}
+input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 15px;
+    border: 1px solid hsl(231, 7%, 60%);
+    border-radius: 5px;
+    font-family: 'Roboto', 'Trebuchet MS', sans-serif;
+}
+button {
+    padding: 5px 0px;
+    color: white;
+    background-color: hsl(234, 29%, 20%);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Roboto', 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+}
+button:hover {
+    cursor: pointer;
+    background: linear-gradient(145deg, hsl(4, 74%, 62%), hsl(4, 100%, 67%), rgba(255, 140, 87, 0.85));
+    box-shadow: 0px 10px 20px hsla(4, 74%, 62%, .5);
+}
+.container-image2 {
+    width: max-content;
+}
+#img-desktop {
+    height: 400px;
+}
+.container-image1 {
+    display: none;
+}
+.container-text {
+    animation-name: cardText;
+    animation-duration: .8s;
+}
+.card-2 {
+    width: 350px;
+    padding: 40px;
+    border-radius: 30px;
+    height: 23rem;
+    display: grid;
+    display: none;
+
+    animation: cardClose;
+    animation-duration: .5s;
+    transition: ease-in;
+}
+.card-2 div img {
+    height: 45px;
+}
+.card-2 h2 {
+    font-size: 30px;
+}
+.card-2 p {
+    font-size: 13px;
+    line-height: 18px;
+}
+#mail-value {
+    font-weight: 700;
+}
+#confirm p {
+    display: inline;
+}
+@keyframes cardOpen {
+    0% {
+        transform: scale(1.15,1.15);
+    }
+    50% {
+        transform: scale(.9, .9);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+@keyframes cardText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+@keyframes cardClose {
+    0% {
+        transform: scale(.75, .75);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+        color: hsl(228, 45%, 44%); 
+}
+@media (max-width: 670px) {
+    .container-text {
+        margin: 30px 15px 30px 8px;
+    }
+    .containertext h2 {
+        font-size: 32px;
+    }
+    .list {
+        width: max-content;
+    }
+}
+@media (max-width: 635px) {
+    .card-1 {
+        width: 95%;
+    }
+    .container-text {
+        margin: 20px 15px 20px 8px;
+    }
+    .container-text h2 {
+        font-size: 35px;
+    }
+    .container-text p {
+        font-size: 11px;
+    }
+    .list {
+        width: 100%;
+    }
+    .list span {
+        margin-bottom: 5px;
+    }
+    .list span img {
+        height: 13px; 
+        margin-right: 5px;
+    }
+    .list p {
+        line-height: 15px;
+    }
+    .mail-input {
+        position: relative;
+        top: 10px;
+    }
+    input {
+        padding: 7px 10px;
+    }
+    .card-1 button {
+        padding: 0px;
+    }
+}
+@media (max-width: 600px) {
+    body {
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-color: white;
+        padding: 0px;
+    }
+    .card-1 {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        padding: 0px;
+        background: transparent;
+
+        animation: none;
+    }
+    .container-image1 {
+        display: block;
+        width: 100%;
+        height: max-content;
+    }
+    #img-mobile {
+        width: 100%;
+    }
+    .container-image2 {
+        display: none;
+    }
+    .container-text {
+        display: grid;
+        justify-content: unset;
+        width: 100%;
+        height: 350px;
+        margin: 0px;
+        padding: 25px 40px;
+    }
+    .mail-input {
+        margin-bottom: 10px;
+    }
+    .container-text p {
+        font-size: 14px;
+    }
+    .card-1 input {
+        padding: 12px 15px;
+    }
+    .card-1 button {
+        padding: 5px;
+        width: 100%;
+    }
+    .card-2 {
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 97vh;
+        border-radius: 0;
+
+        animation: none;
+    }
+    .card-2 h2 {
+        font-size: 35px;
+        margin: 30px 0px 20px 0px;
+    }
+    .card-2 p {
+        margin: 20px 0px;
+        font-size: 15px;
+    }
+    .card-2 button {
+        padding: 13px 0px;
+        align-self: center;
+        position: fixed;
+        width: 84%;
+        bottom: 50px;
+    }
+    footer {
+        position: relative;
+        display: block;
+    }
+    .card-1 {
+        display: block;
+    }
+    .card-2 {
+        display: none;
+    }
+}
+@media (max-width: 375px) {
+    .container-text {
+        padding: 15px 30px;
+    }
+    .container-text h2 {
+        font-size: 30px;
+    }
+    .container-text p, .container-text button {
+        font-size: 12px;
+    }
+    .mail-input {
+        margin-bottom: 7px;
+    }
+}
